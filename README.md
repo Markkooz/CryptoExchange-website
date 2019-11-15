@@ -1,3 +1,3 @@
 ## Crypto - Currency Exchange
-# Frontend: 
+### Frontend: 
 HTML/CSS/JS with Bootstrap 
