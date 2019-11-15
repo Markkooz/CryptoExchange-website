@@ -17,4 +17,8 @@ Node.js, Express server with Handlebars for server generated HTML view engine, a
 ### Design and Site Architechture from initial brainstorming session
 BrainStorm Session 1 Site Overview: ![Brain storm session 1 site overview](Images/BrainStorm1Overview.jpeg)
 BrainStorm Session 1 Main Page: ![Brain storm session 1 main page](Images/BrainStorm1MainPage.jpeg)
-
+BrainStorm Session 1 List of Users Page: ![Brain storm session 1 list of users](Images/BrainStorm1ListofUsersPage.jpeg)
+BrainStorm Session 1 Crypto Metrics Page: ![Brain storm session 1 crypto metrics page](Images/BrainStorm1CryptoMetricsPage.jpeg)
+BrainStorm Session 1 Expert Opinions Page: ![Brain storm session 1 expert opinions page](Images/BrainStorm1ExpertOpinionsPage.jpeg)
+BrainStorm Session 1 Expert Post Page: ![Brain storm session 1 expert post page](Images/BrainStorm1ExpertPostPage.jpeg)
+BrainStorm Session 1 Database Architechture: ![Brain storm session 1 db arch](Images/BrainStorm1DatabaseArchitechture.jpeg)
