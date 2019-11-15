@@ -8,10 +8,13 @@ The app's main page includes price graphs for these coins and buy/sell buttons f
 
 The second page is reached after logging in/ registering from the main page and includes how much you, the user, has in his or her wallet as well as buttons (TODO). The web app also has a page to see the current list of all users (including expert users) and another page to see the 3 most recent "expert opinions" of the expert users . Consequently, the app also has a page exclusive to expert users that allows them to create posts of their opinions on the 3 coins featured in the app. 
 
-### Design and Site Architechture from initial brainstorming session
-BrainStorm Session 1 Site Overview: ![Brain storm session 1 site overview](Images/BrainStorm1Overview.jpeg)
 ### Frontend: 
 HTML/CSS/JS with Bootstrap 
 
 ### Backend:
 Node.js, Express server with Handlebars for server generated HTML view engine, and SQL database with ORM implemented with Sequalize
+
+### Design and Site Architechture from initial brainstorming session
+BrainStorm Session 1 Site Overview: ![Brain storm session 1 site overview](Images/BrainStorm1Overview.jpeg)
+BrainStorm Session 1 Main Page: ![Brain storm session 1 main page](Images/BrainStorm1MainPage.jpeg)
+
