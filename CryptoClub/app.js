@@ -21,12 +21,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Hook up all routes
 app.use('/', routes);
 
+/*
 models.sequelize.sync().then(function() {
   server.listen(port);
   server.on('error', onError);
   server.on('listening', onListening);
 });
 
+*/
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

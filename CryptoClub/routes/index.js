@@ -4,13 +4,20 @@ const express = require('express');
 const router = express.Router();
 
 const indexRouter = require('./indexRouter');
-const genresRouter = require('./genresRouter');
-const artistsRouter = require('./artistsRouter');
-const albumsRouter = require('./albumsRouter');
+const userDetailsRouter = require('./userDetailsRouter');
+const usersListRouter = require('./usersListRouter');
+const cryptoRouter = require('./cryptoRouter');
+const loginRouter = require('./loginRouter');
+const commentsRouter = require('./commentsRouter');
+const addCommentRouter = require('./addCommentRouter');
+
 
 router.use('/', indexRouter);
-router.use('/genres', genresRouter);
-router.use('/artists', artistsRouter);
-router.use('/albums', albumsRouter);
+router.use('/usersList', usersListRouter);
+router.use('/user', userDetailsRouter);
+router.use('/crypto', cryptoRouter);
+router.use('/login', loginRouter);
+router.use('/comments', commentsRouter);
+router.use('/addComment', addCommentRouter);
 
 module.exports = router;
