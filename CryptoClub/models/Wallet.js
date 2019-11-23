@@ -24,6 +24,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   }, {
-    tableName: 'Wallet'
+    tableName: 'Wallet',
+    timestamps: false
   });
 };

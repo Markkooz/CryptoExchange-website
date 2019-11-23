@@ -24,6 +24,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   }, {
-    tableName: 'Comment'
+    tableName: 'Comment',
+    timestamps: false
   });
 };

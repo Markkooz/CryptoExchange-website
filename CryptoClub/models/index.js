@@ -36,5 +36,5 @@ Wallet.hasMany(Adress, {foreignKey: "walletId", as: "Adresses"});
 Adress.belongsTo(Wallet, {foreignKey: "walletId"});
 
 module.exports = {
-  Person, PhoneNumber
+  User, Wallet, Adress, Comment
 };
