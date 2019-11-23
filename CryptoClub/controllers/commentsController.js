@@ -1,6 +1,6 @@
 
 module.exports = {
   getAllComments(req, res) {
-    return res.render('comment', { data: 'reached /comments index route!' });
+    return res.render('comments', { data: 'reached /comments index route!' });
   },
 };
