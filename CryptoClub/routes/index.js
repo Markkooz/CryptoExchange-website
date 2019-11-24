@@ -10,6 +10,7 @@ const cryptoRouter = require('./cryptoRouter');
 const loginRouter = require('./loginRouter');
 const commentsRouter = require('./commentsRouter');
 const addCommentRouter = require('./addCommentRouter');
+const registerRouter = require('./registerRouter');
 
 
 router.use('/', indexRouter);
@@ -19,5 +20,6 @@ router.use('/crypto', cryptoRouter);
 router.use('/login', loginRouter);
 router.use('/comments', commentsRouter);
 router.use('/addComment', addCommentRouter);
+router.use('/register', registerRouter);
 
 module.exports = router;

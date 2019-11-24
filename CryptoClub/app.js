@@ -5,6 +5,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 //const models = require('sequelize');
+const session = require('express-session');
 
 const routes = require('./routes');
 
@@ -19,6 +20,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+// set up session (in-memory storage by default)
+app.use(session({secret: "This is a big long secret lama string."}));
 
 // Hook up all routes
 app.use('/', routes);
