@@ -1,2 +1,55 @@
-<h1>{{data}}</h1>
-<p>Welcome to {{data}}</p>
+<div class="container">
+	<div class="row col-10 mt-4">
+		<h1>Crypto Team (placeholdername)</h1>
+	</div>
+
+	<div class="row col-10 pb-2 mb-2 border-bottom">
+		Welcome (USERNAME), please make your comment about (TYPE OF CRYPTO)
+	</div>
+
+	<form method="POST" action="/addComment">
+		<div class="input-group mt-4 mb-4">
+		  <div class="input-group-prepend">
+		    <span class="input-group-text">Comment</span>
+		  </div>
+		  <textarea class="form-control" name="comment" aria-label="With textarea"></textarea>
+		</div>
+	  <fieldset class="form-group">
+	    <div class="row">
+	      <legend class="col-form-label col-sm-2 pt-0">Prediction</legend>
+	      <div class="col-sm-10">
+	        <div class="form-check">
+	          <input class="form-check-input" type="radio" name="predict" id="gridRadios1" value="goesUp">
+	          <label class="form-check-label" for="gridRadios1">
+	            Will Go Up
+	          </label>
+	        </div>
+	        <div class="form-check">
+	          <input class="form-check-input" type="radio" name="predict" id="gridRadios2" value="goesDown">
+	          <label class="form-check-label" for="gridRadios2">
+	            Will Go Down
+	          </label>
+	        </div>
+	        <div class="form-check">
+	          <input class="form-check-input" type="radio" name="predict" id="gridRadios3" value="neutral" >
+	          <label class="form-check-label" for="gridRadios3">
+	            Neutral
+	          </label>
+	        </div>
+	      </div>
+	    </div>
+	  </fieldset>
+	  <div class="form-group row">
+	    <div class="col-sm-10">
+	      <button type="submit" class="btn btn-primary">Submit Comment!</button>
+	    </div>
+	  </div>
+	</form>
+	{{#listOfErrors}}
+	    <div class="alert-danger p-2 mb-2">
+	    	<ul>
+	    		<li>{{this}}</li>
+	    	</ul>
+	   	</div>
+	{{/listOfErrors}}
+</div>

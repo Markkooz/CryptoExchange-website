@@ -23,9 +23,13 @@ module.exports = function(sequelize, DataTypes) {
         model: 'User',
         key: 'id'
       }
-    }
+    },
+    crypto: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    },
   }, {
     tableName: 'Comment',
-    timestamps: false
+    timestamps: true
   });
 };
