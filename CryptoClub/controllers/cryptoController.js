@@ -1,3 +1,4 @@
+const { User, Wallet, Adress, Comment } = require('../models');
 
 module.exports = {
   getCrypto(req, res) {
