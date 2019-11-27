@@ -5,16 +5,66 @@
   <canvas id="myChart" width="200" height="200"></canvas>
 </section>
 
-{{#if user.expert}}
 
-<a href="/addComment?c={{type}}">Add your prediction</a>
+{{#if user.id}}
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0">Dollar exchange</h3>
+          <div class="mb-1 text-muted"></div>
+          <p class="card-text mb-auto">Balance: {{data}} {{type}} is x dollars</p>
+          {{#unless user.expert}}
+          <a href="/comments?c={{type}}">Seek advice</a>
+          {{else}}
+          <a href="/addComment?c={{type}}">Give some advice</a>
+          {{/unless}}
+        </div>
+        <a href="/sell">
+        <div class="col-auto d-none d-lg-block">
 
-{{else}}
+          <svg href="/sell" class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Sell {{type}}</text></svg></a>
+        </div>
+      </div>
+    </div>
 
-<a href="/comments?c={{type}}">See expert's opinions</a>
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0">{{type}} exchange</h3>
+          <div class="mb-1 text-muted"></div>
+          <p class="mb-auto">Balance: user dollars is x {{type}}</p>
+          {{#unless user.expert}}
+          <a href="/comments?c={{type}}">Seek advice</a>
+          {{else}}
+          <a href="/addComment?c={{type}}">Give some advice</a>
+          {{/unless}}
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><a href="/buy"><text x="50%" y="50%" fill="#eceeef" dy=".3em">Buy {{type}}</text></a></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
 {{/if}}
 
-<div>{{data}}</div>
 
 <script src="displayChart.js"></script>
