@@ -1,5 +1,5 @@
 module.exports = {
-  getUser(req, res) {
+  getAllusers(req, res) {
     return res.render('user', { data: 'reached /userList index route!' });
   },
 };
