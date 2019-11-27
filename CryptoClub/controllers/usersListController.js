@@ -1,6 +1,6 @@
 module.exports = {
   getAllusers(req, res) {
-    return res.render('user', { data: 'reached /userList index route!' });
+    return res.render('usersList', { data: 'reached /userList index route!' });
   },
 };
 
