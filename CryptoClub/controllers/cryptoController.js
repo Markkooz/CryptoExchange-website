@@ -23,7 +23,8 @@ module.exports = {
   	}else
   	{
   		//redirects to API thingy
-      res.redirect('/');
+      return res.render('crypto', {  type: req.query.c });
+      //res.redirect('/');
   	}
   	
   },
