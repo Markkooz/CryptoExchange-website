@@ -1,6 +1,6 @@
 module.exports = {
   getAllusers(req, res) {
-    return res.render('usersList', { data: 'reached /userList index route!' });
+    return res.render('usersList', { user: req.session.user });
   },
 };
 

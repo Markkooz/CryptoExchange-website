@@ -1,6 +1,6 @@
 module.exports = {
   getLoggedout(req, res) {
   	delete req.session.user;
-	res.redirect('/');
+	res.redirect('/login');
   },
 };
