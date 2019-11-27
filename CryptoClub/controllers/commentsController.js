@@ -69,6 +69,7 @@ module.exports = {
 		   	return res.render('comments', {
           type: req.query.c,
 		   		comments: commentToSend,
+          user: req.session.user,
 		   	});
   		});
   	});
