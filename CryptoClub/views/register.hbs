@@ -1,5 +1,6 @@
 <div class="container">
-
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
 <div class="row col-10 mt-4">
 	<h1>Crypto Team (placeholdername)</h1>
 </div>
@@ -10,7 +11,9 @@
 
 <div class="row col-10 justify-content-md-center mt-5">
 
-<div class="card" style="width: 36rem;">
+<canvas id="myChart" width="400" height="400"></canvas>
+
+<div class="card" id="tests"style="width: 36rem;">
   <div class="card-body">
     <h5 class="card-title">Register Here</h5>
 
@@ -34,6 +37,6 @@
 	</form>
   </div>
 </div>
-
+<script src="displayChart.js"></script>
 </div>
 </div>
