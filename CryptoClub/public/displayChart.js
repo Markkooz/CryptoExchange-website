@@ -42,6 +42,7 @@ $.get('https://api.nomics.com/v1/currencies/ticker?key=2018-09-demo-dont-deploy-
                     }
                 }]
             }
-        }
+        },
+        responsive: false,
     });
 });

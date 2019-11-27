@@ -1,9 +1,7 @@
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
 <section class="jumbotron text-center align-items-center">
-  <div class="container">
-    <div class="row">
-      <div class="span4"><img class="center-block" src="https://i.stack.imgur.com/7CiRI.png" /></div>
-    </div>
-  </div>
+  <canvas id="myChart" width="200" height="200"></canvas>
 </section>
 
 {{#if user.expert}}
@@ -17,3 +15,5 @@
 {{/if}}
 
 <div>{{data}}</div>
+
+<script src="displayChart.js"></script>
