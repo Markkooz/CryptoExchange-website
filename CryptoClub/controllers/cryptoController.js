@@ -7,12 +7,13 @@ module.exports = {
   	{
   		Wallet.findOne({where: {type : req.query.c,
   								userId : req.session.user.id}}).then(data=>{
-  			    	return res.render('crypto', { data: data.balance, user: req.session.user });
+  			    	return res.render('crypto', { data: data.balance, user: req.session.user, type: data.type });
   		});
 
   	}else
   	{
   		//redirects to API thingy
+      res.redirect('/');
   	}
   	
   },

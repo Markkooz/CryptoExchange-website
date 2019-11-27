@@ -4,7 +4,7 @@
 	</div>
 
 	<div class="row col-10 pb-2 mb-2 border-bottom font-weight-bold" style="font-size:40px;">
-		Predictions for (CRYPTO TYPE HERE)
+		Predictions for {{type}}
 	</div>
 	<div class="card-deck">
 		{{#comments}}
@@ -12,7 +12,7 @@
 		    <div class="card-body text-info ">
 		      <h5 class="card-title font-weight-normal">{{name}}</h5>
 		      <p class="card-text font-weight-bold">{{text}}.{{time}}</p>
-		      <p class="card-text"><small class="text-muted">{{time}}</small></p>
+		      <p class="card-text"><small class="text-muted">{{prediction}}</small></p>
 		    </div>
 		  </div>
 		{{/comments}}

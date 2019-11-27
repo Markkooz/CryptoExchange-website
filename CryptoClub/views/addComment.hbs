@@ -4,7 +4,7 @@
 	</div>
 
 	<div class="row col-10 pb-2 mb-2 border-bottom">
-		Welcome (USERNAME), please make your comment about (TYPE OF CRYPTO)
+		Welcome {{user.name}}, please make your comment about {{type}}
 	</div>
 
 	<form method="POST" action="/addComment">
@@ -41,7 +41,7 @@
 	  </fieldset>
 	  <div class="form-group row">
 	    <div class="col-sm-10">
-	      <button type="submit" class="btn btn-primary">Submit Comment!</button>
+	      <button type="submit" class="btn btn-primary" value="{{type}}" name="type">Submit Comment!</button>
 	    </div>
 	  </div>
 	</form>
