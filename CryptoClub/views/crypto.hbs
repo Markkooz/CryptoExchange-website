@@ -33,7 +33,7 @@
         <div class="col p-4 d-flex flex-column position-static">
           <h3 class="mb-0">{{type}} exchange</h3>
           <div class="mb-1 text-muted"></div>
-          <p class="mb-auto">Balance: user dollars is x {{type}}</p>
+          <p class="mb-auto">Balance: {{user.balance}}$ is x {{type}}</p>
           {{#unless user.expert}}
           <a href="/comments?c={{type}}">Seek advice</a>
           {{else}}
