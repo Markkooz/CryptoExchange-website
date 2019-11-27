@@ -26,6 +26,26 @@ app.use(session({secret: "This is a big long secret lama string."}));
 // Hook up all routes
 app.use('/', routes);
 
+// Set your secret key: remember to change this to your live secret key in production
+// See your keys here: https://dashboard.stripe.com/account/apikeys
+// const stripe = require('stripe')('sk_test_snbcObWNIGrIyqkQmGeTYnAR');
+
+// (async () => {
+//   const session = await stripe.checkout.sessions.create({
+//     payment_method_types: ['card'],
+//     line_items: [{
+//       name: 'Crypto Purchase Project',
+//       description: 'Wow you got crypto',
+//       images: ['https://example.com/t-shirt.png'],
+//       amount: 500,
+//       currency: 'usd',
+//       quantity: 1,
+//     }],
+//     success_url: 
+//     success_url: 'https://example.com/success?session_id={CHECKOUT_SESSION_ID}',
+//     cancel_url: 'https://example.com/cancel',
+//   });
+// })();
 // Database connection
 /*
 models.sequelize.sync().then(function() {
