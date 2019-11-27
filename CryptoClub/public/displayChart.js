@@ -6,26 +6,38 @@ var type = urlParams.get('c');
 var cryptos = [];
 var rgb = '';
 var rgbBack = '';
-$.get("https://api.nomics.com/v1/currencies/sparkline?key=2018-09-demo-dont-deploy-b69315e440beb145&start=2019-11-22T00%3A00%3A00Z", function(data, status) {
+function findB(curren) {
+    return curren.currency == "BTC";
+}
+function findE(curren) {
+    return curren.currency == "ETH";
+}
+function findL(curren) {
+    return curren.currency == "LTC";
+}
+$.get("https://api.nomics.com/v1/currencies/sparkline?key=2018-09-demo-dont-deploy-b69315e440beb145&start=2019-11-15T00%3A00%3A00Z", function(data, status) {
 	//checking network status of calls
 	console.log("Status: " + status);
 	//console.log(data);
     //cryptos = data;
     if(type === "bitcoin"){
-        cryptos = data[340];
+        cryptos = data.find(findB);
         rgb = 'rgba(255, 99, 132, 0.2)';
         rgbBack = 'rgba(255, 99, 132, 1)';
     }
     else if (type === "ethereum"){
-        cryptos = data[806];
+        cryptos = data.find(findE);
         rgb = 'rgba(54, 162, 235, 0.2)';
         rgbBack = 'rgba(54, 162, 235, 1)';
     }
     else{ //type is litecoin
-        cryptos = data[1318];
+        cryptos = data.find(findL);
         rgb = 'rgba(255, 206, 86, 0.2)'
         rgbBack = 'rgba(255, 206, 86, 1)';
     }
+    cryptos.timestamps.forEach((time, index) => {
+        cryptos.timestamps[index] = time.substr(0,10);
+    })
     console.log(cryptos);
 }).then(() => {
     //example
@@ -35,10 +47,10 @@ $.get("https://api.nomics.com/v1/currencies/sparkline?key=2018-09-demo-dont-depl
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: [cryptos.timestamps[1].substr(0,10) , cryptos.timestamps[2].substr(0,10), cryptos.timestamps[3].substr(0,10), cryptos.timestamps[4].substr(0,10), cryptos.timestamps[5].substr(0,10),],
+            labels: cryptos.timestamps,
             datasets: [{
                 label: 'USD value',
-                data: [cryptos.prices[0], cryptos.prices[1], cryptos.prices[2], cryptos.prices[3], cryptos.prices[4], cryptos.prices[5]],
+                data: cryptos.prices,
                 backgroundColor: [
                     rgb
                 ],
