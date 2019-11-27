@@ -3,7 +3,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { getAllusers } = require('../controllers/logoutController');
+const { getLoggedout } = require('../controllers/logoutController');
 
 router.get('/', getLoggedout);
 
