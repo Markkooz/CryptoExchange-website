@@ -1,6 +1,18 @@
 
 module.exports = {
   getCrypto(req, res) {
-    return res.render('crypto', { data: 'reached /crypto index route!' });
+
+  	if(req.session.user)
+  	{
+  		Wallet.findOne({where: {type : req.query.c,
+  								userId : req.session.user.id}}).then(data=>{
+  			    	return res.render('crypto', { data: data.balance });
+  		});
+
+  	}else
+  	{
+  		//redirects to API thingy
+  	}
+  	
   },
 };
