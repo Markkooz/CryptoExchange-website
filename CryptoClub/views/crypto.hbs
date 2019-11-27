@@ -28,4 +28,22 @@
       </div>
     </nav>
 
+<section class="jumbotron text-center align-items-center">
+  <div class="container">
+    <div class="row">
+      <div class="span4"><img class="center-block" src="https://i.stack.imgur.com/7CiRI.png" /></div>
+    </div>
+  </div>
+</section>
+
+{{#if user.expert}}
+
+<a href="/addComment?c=bitcoin">Add your prediction</a>
+
+{{else}}
+
+<a href="/comments?c=bitcoin">See expert's opinions</a>
+
+{{/if}}
+
 <div>{{data}}</div>
