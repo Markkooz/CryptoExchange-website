@@ -1,6 +1,17 @@
 <div class="album py-5 bg-light">
     <div class="container">
-
+{{#unless user.id}}
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Welcome to Crypto Club!</h1>
+      <p class="lead text-muted">Please Login or Register to access the full features</p>
+      <p>
+        <a href="/login" class="btn btn-primary my-2">Login</a>
+        <a href="/register" class="btn btn-secondary my-2">Register</a>
+      </p>
+    </div>
+  </section> 
+{{/unless}}
           <div class="row">
             <a href="/crypto?c=bitcoin" class="col-md-4">
               <div class="card mb-4 box-shadow">
