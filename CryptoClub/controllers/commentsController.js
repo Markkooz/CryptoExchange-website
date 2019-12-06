@@ -1,8 +1,7 @@
 const { User, Wallet, Adress, Comment } = require('../models');
 module.exports = {
   getAllComments(req, res) {
-    if(!req.query.c || !req.session.user)
-      return res.redirect('/');
+    if(!req.query.c || !req.session.user) return res.redirect('/');
   	//edit this to include only from a btc type
   	//specifically req.body.crypto (or req.query.crypto) should have
   	//string of crypto that you want to see comments of
@@ -25,7 +24,7 @@ module.exports = {
   		Comment.findAll({
   			where: {
   				userId: userIds,
-          crypto: req.query.c,
+          		crypto: req.query.c,
   			},
   			order: [
   				//sort fetched list of entries by timestamp in descending order "DESC"
@@ -39,37 +38,35 @@ module.exports = {
 		  	var commentToSend = [];
 		  	//need this or else all comments get displayed 
 		   	var commentLimit = 4;
-        var foundOne = {};
+        	var foundOne = {};
 		   	//for each comment in fetched comments, we push to commentToSend
 		   	//(TODO:Alvaro) Make sure only one comment for each user is fetched
 		   	//as-is an expert can spam and take the comment space from other experts
 		   	comments.forEach(comment => {
 		   		console.log(comment.createdAt);
-          if (!foundOne[comment.userId]){
-            var comm = {
-              name: idMap[comment.userId],
-              text: comment.text,
-              prediction: comment.prediction,
-              //CURRENTLY CANNOT ACCESS CREATEDAT ATTRIBUTE
-              //MAY NEED TO REBUILD DATABASE
-              //HATE TIMESTAMPS REEEE
-              time: comment.createdAt,
-            }
-            if (commentLimit > 0){
-              commentToSend.push(comm);
-                commentLimit--;
-            }
-            foundOne[comment.userId] = true;
-          }
-          else{
-            //do nothing
-          }
+          		if (!foundOne[comment.userId]){
+					var comm = {
+						name: idMap[comment.userId],
+						text: comment.text,
+						prediction: comment.prediction,
+						//CURRENTLY CANNOT ACCESS CREATEDAT ATTRIBUTE
+						//MAY NEED TO REBUILD DATABASE
+						//HATE TIMESTAMPS REEEE
+						time: comment.createdAt,
+					}
+					if (commentLimit > 0) {
+						commentToSend.push(comm);
+						commentLimit--;
+					}
 
-		   	});
+					foundOne[comment.userId] = true;
+				}
+			});
+			   
 		   	return res.render('comments', {
-          type: req.query.c,
-		   		comments: commentToSend,
-          user: req.session.user,
+				type: req.query.c,
+				comments: commentToSend,
+				user: req.session.user,
 		   	});
   		});
   	});
