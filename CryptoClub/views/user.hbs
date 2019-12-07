@@ -1,7 +1,9 @@
+
+{{#profile}}
 <div class="flex-column d-flex align-items-center">
       {{!-- Username --}}
       <div class="d-flex flex-row mb-3 mt-3">
-        Mr. Expert Experton
+        {{name}}
       </div>
       {{!-- /Username --}}
 
@@ -15,17 +17,17 @@
       <div class="d-flex flex-row mb-3 mt-3 align-items-center">
         {{!-- BTC --}}
         <div class="rounded-pill mr-3">BTC</div>
-        <span class="mx-25 center badge badge-primary badge-pill mr-3">2</span>
+        <span class="mx-25 center badge badge-primary badge-pill mr-3">{{btc}}</span>
         {{!-- /BTC --}}
 
         {{!-- ETH --}}
         <div class="rounded-pill mr-3">ETH</div>
-        <span class="mx-25 center badge badge-primary badge-pill mr-3">2</span>
+        <span class="mx-25 center badge badge-primary badge-pill mr-3">{{eth}}</span>
         {{!-- /ETH --}}
 
         {{!-- LTC --}}
         <div class="rounded-pill mr-3">LTC</div>
-        <span class="mx-25 center badge badge-primary badge-pill mr-3">2</span>
+        <span class="mx-25 center badge badge-primary badge-pill mr-3">{{ltc}}</span>
         {{!-- /LTC --}}
 
       {{!-- /Wallet Count --}}
@@ -66,3 +68,4 @@
       {{!-- /C3 --}}
     </div>
     {{!-- /Comments --}}
+{{/profile}}
