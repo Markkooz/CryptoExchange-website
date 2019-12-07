@@ -3,55 +3,49 @@ const {User, Wallet} = require('../models');
 module.exports = {
   getAllusers(req, res) {
 
+    //* Pull all users from the DB
     User.findAll().then(users => {
-      //* What I want to happen here is that I retreive:
-      //*   - All Users
-      //*   - All their corresponding Wallet values
-      //*   - Their profile picture URL (Not currently in the database
 
-      //* A list of keys
-      var userIds = [];
+      //* Empty list that will hold a JSON object with id, name, btc, eth, and ltc amounts of each user.
+      var profiles = [];
 
-      //* A map for O(1) retrieval of a User's name since wallets only carry the id of a user
-      var idMap = {};
-
+      //* Iterate through Users
       users.forEach(user => {
 
-        userIds.push(user.id);
+        //* Using each userId, pull matching Wallet data from DB
+        Wallet.findAll({
+          where: {
+            userId: user.id
+          },
+        }).then(wallets => {
 
-        idMap[user.id] = user.name;
+          //* Create JSON object
+          var profile = {
+            name: user.name,
+            id: user.id,
+            btc: 0,
+            eth: 0,
+            ltc: 0
+          };
 
-      });
-      Wallet.findAll({
-        where: {
-          userId: userIds,
-        }
-      }).then(wallets => {
+          //* Iterate through the matching wallet data
+          wallets.forEach(wallet => {
 
-        console.log(wallets);
-        
-        //* holds Wallet objects with:
-        //*   - Username
-        //*   - Bitcoin amount that the user has
-        //*   - Ethereum amount that the user has
-        //*   - LiteCoin amount that the user has
-        var walletToSend = [];
-        
-        wallets.forEach(wallet => {
-          console.log(wallet.id);
+            //* Filter through wallet data and place into appropiate slots in JSON object
+            if(wallet.type == "bitcoin") profile.btc = wallet.balance;
+            else if(wallet.type == "ethereum") profile.eth = wallet.balance;
+            else if(wallet.type == "litecoin") profile.ltc = wallet.balance;
+          });
 
-          //* Create wallet object 
-          //TODO I stopped engineering here at 10:45pm at the CS lab @ UTRGV
-          // var walletObj = {
-          //   username = idMap[wallet.userId],
-          //   bitcoin = 
-          //     }
-          //   }),
-          
+          //* Push into the list
+          profiles.push(profile);
+        });
+
+        //* Return list of JSON to the hbs view
+        return res.render('usersList', {
+          profiles: profiles
         });
       });
-
     });
   },
-    return res.render('usersList', { user: req.session.user });
 };

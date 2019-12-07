@@ -1,3 +1,5 @@
+
+{{#profiles}}
 <div class="list-group">
   {{!-- Super Row --}}
   <div class="list-group-item flex-row d-flex mb-3 mt-3">
@@ -5,7 +7,7 @@
     <a href = "/user" class="flex-column d-flex align-items-center list-group-item-action">
       {{!-- Username --}}
       <div class="d-flex flex-row mb-3 mt-3">
-        Mr. Expert Experton
+        {{name}}
       </div>
       {{!-- /Username --}}
 
@@ -19,17 +21,17 @@
       <div class="d-flex flex-row mb-3 mt-3 align-items-center">
         {{!-- BTC --}}
         <div class="rounded-pill mr-3">BTC</div>
-        <span class="mx-25 center badge badge-primary badge-pill mr-3">2</span>
+        <span class="mx-25 center badge badge-primary badge-pill mr-3">{{btc}}</span>
         {{!-- /BTC --}}
 
         {{!-- ETH --}}
         <div class="rounded-pill mr-3">ETH</div>
-        <span class="mx-25 center badge badge-primary badge-pill mr-3">2</span>
+        <span class="mx-25 center badge badge-primary badge-pill mr-3">{{eth}}</span>
         {{!-- /ETH --}}
 
         {{!-- LTC --}}
         <div class="rounded-pill mr-3">LTC</div>
-        <span class="mx-25 center badge badge-primary badge-pill mr-3">2</span>
+        <span class="mx-25 center badge badge-primary badge-pill mr-3">{{ltc}}</span>
         {{!-- /LTC --}}
 
       {{!-- /Wallet Count --}}
@@ -37,84 +39,5 @@
     </a>
     {{!-- /Profile --}}
   </div>
-  {{!-- Super Row --}}
-
-  {{!-- Super Row --}}
-  <div class="list-group-item flex-row d-flex mb-3 mt-3">
-    {{!-- Profile --}}
-    <a href="/user" class="flex-column d-flex align-items-center list-group-item-action">
-      {{!-- Username --}}
-      <div class="d-flex flex-row mb-3 mt-3">
-        Mr. Expert Experton
-      </div>
-      {{!-- /Username --}}
-
-      {{!-- Headshot --}}
-      <div class="d-flex flex-row mb-3 mt-3">
-        <img src="http://buildbetterresults.com/wp-content/uploads/2017/09/Person-3.png" class=" w-50 h-50 img-responsive rounded mx-auto d-block">
-      </div>
-      {{!-- /Headshot --}}
-
-      {{!-- Wallet Count --}}
-      <div class="d-flex flex-row mb-3 mt-3 align-items-center">
-        {{!-- BTC --}}
-        <div class="rounded-pill mr-3">BTC</div>
-        <span class="mx-25 center badge badge-primary badge-pill mr-3">2</span>
-        {{!-- /BTC --}}
-
-        {{!-- ETH --}}
-        <div class="rounded-pill mr-3">ETH</div>
-        <span class="mx-25 center badge badge-primary badge-pill mr-3">2</span>
-        {{!-- /ETH --}}
-
-        {{!-- LTC --}}
-        <div class="rounded-pill mr-3">LTC</div>
-        <span class="mx-25 center badge badge-primary badge-pill mr-3">2</span>
-        {{!-- /LTC --}}
-
-      {{!-- /Wallet Count --}}
-      </div>
-    </a>
-    {{!-- /Profile --}}
-  </div>
-  {{!-- Super Row --}}
-
-  {{!-- Super Row --}}
-  <div class="list-group-item flex-row d-flex mb-3 mt-3">
-    {{!-- Profile --}}
-    <a href="/user" class="flex-column d-flex align-items-center list-group-item-action">
-      {{!-- Username --}}
-      <div class="d-flex flex-row mb-3 mt-3">
-        Mr. Expert Experton
-      </div>
-      {{!-- /Username --}}
-
-      {{!-- Headshot --}}
-      <div class="d-flex flex-row mb-3 mt-3">
-        <img src="http://buildbetterresults.com/wp-content/uploads/2017/09/Person-3.png" class=" w-50 h-50 img-responsive rounded mx-auto d-block">
-      </div>
-      {{!-- /Headshot --}}
-
-      {{!-- Wallet Count --}}
-      <div class="d-flex flex-row mb-3 mt-3 align-items-center">
-        {{!-- BTC --}}
-        <div class="rounded-pill mr-3">BTC</div>
-        <span class="mx-25 center badge badge-primary badge-pill mr-3">2</span>
-        {{!-- /BTC --}}
-
-        {{!-- ETH --}}
-        <div class="rounded-pill mr-3">ETH</div>
-        <span class="mx-25 center badge badge-primary badge-pill mr-3">2</span>
-        {{!-- /ETH --}}
-
-        {{!-- LTC --}}
-        <div class="rounded-pill mr-3">LTC</div>
-        <span class="mx-25 center badge badge-primary badge-pill mr-3">2</span>
-        {{!-- /LTC --}}
-
-      {{!-- /Wallet Count --}}
-      </div>
-    </a>
-    {{!-- /Profile --}}
-  {{!-- Super Row --}}
-</div>
+{{!-- Super Row --}}
+{{/profiles}}
