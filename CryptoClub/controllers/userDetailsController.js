@@ -16,7 +16,7 @@ module.exports = {
 
       //* List of JSON comment objects
       var commentsToSend = [];
-      
+
       //* JSON object with relevant data from userList (passed via query string), 
       //* and a list of JSON comment objects in no particular order
       var profile = {
@@ -58,4 +58,4 @@ module.exports = {
       }
     });
   },
-};
+}; 
