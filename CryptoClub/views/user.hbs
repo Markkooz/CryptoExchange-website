@@ -1,55 +1,45 @@
 
-{{#profile}}
+{{#user}}
+{{!-- Profile --}}
 <div class="flex-column d-flex align-items-center">
-      {{!-- Username --}}
-      <div class="d-flex flex-row mb-3 mt-3">
-        {{name}}
-      </div>
-      {{!-- /Username --}}
+  {{!-- Username --}}
+  <div class="d-flex flex-row mb-3 mt-3">
+    {{name}}
+  </div>
+  {{!-- /Username --}}
 
-      {{!-- Headshot --}}
-      <div class="d-flex flex-row mb-3 mt-3">
-        <img src="https://pbs.twimg.com/profile_images/419422196013215745/PF4CMeY1.jpeg" class=" w-50 h-50 img-responsive rounded mx-auto d-block">
-      </div>
-      {{!-- /Headshot --}}
+  {{!-- Headshot --}}
+  <div class="d-flex flex-row mb-3 mt-3">
+    <img src="https://pbs.twimg.com/profile_images/419422196013215745/PF4CMeY1.jpeg" class=" w-50 h-50 img-responsive rounded mx-auto d-block">
+  </div>
+  {{!-- /Headshot --}}
 
-      {{!-- Wallet Count --}}
-      <div class="d-flex flex-row mb-3 mt-3 align-items-center">
-        {{!-- BTC --}}
-        <div class="rounded-pill mr-3">BTC</div>
-        <span class="mx-25 center badge badge-primary badge-pill mr-3">{{btc}}</span>
-        {{!-- /BTC --}}
+  {{!-- Wallet Count --}}
+  {{#Wallets}}
+  <div class="d-flex flex-row mb-3 mt-3 align-items-center">
+    <div class="rounded-pill mr-3">{{type}}</div>
+    <span class="mx-25 center badge badge-primary badge-pill mr-3">{{balance}}</span>
 
-        {{!-- ETH --}}
-        <div class="rounded-pill mr-3">ETH</div>
-        <span class="mx-25 center badge badge-primary badge-pill mr-3">{{eth}}</span>
-        {{!-- /ETH --}}
-
-        {{!-- LTC --}}
-        <div class="rounded-pill mr-3">LTC</div>
-        <span class="mx-25 center badge badge-primary badge-pill mr-3">{{ltc}}</span>
-        {{!-- /LTC --}}
-
-      {{!-- /Wallet Count --}}
+  </div>
+  {{/Wallets}}
+  {{!-- /Wallet Count --}}
+</div>
+{{!-- /Profile --}}
+{{!-- Comments --}}
+{{#Comments}}
+<div class="flex-column d-flex align-items-center">
+  {{!-- C1 --}}
+  <div class="d-flex flex-row">
+    <div class="card mx-25">
+      <div class="card-body">
+        <h5 class="card-title">Comment on the state of: {{crypto}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Prediction: {{prediction}}</h6>
+        <p class="card-text">{{text}}</p>
       </div>
     </div>
-    {{!-- /Profile --}}
-    {{!-- Comments --}}
-    {{#comments}}
-    <div class="flex-column d-flex align-items-center">
-      {{!-- C1 --}}
-      <div class="d-flex flex-row">
-        <div class="card mx-25">
-          <div class="card-body">
-            <h5 class="card-title">Comment on the state of: {{crypto}}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Prediction: {{prediction}}</h6>
-            <p class="card-text">{{text}}</p>
-          </div>
-        </div>
-      </div>
-      {{!-- /C1 --}}
-    </div>
-    {{/comments}}
-    {{!-- /Comments --}}
-    
-{{/profile}}
+  </div>
+  {{!-- /C1 --}}
+</div>
+{{/Comments}}
+{{!-- /Comments --}}
+{{/user}}
