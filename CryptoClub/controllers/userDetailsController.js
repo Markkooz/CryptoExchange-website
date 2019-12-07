@@ -10,9 +10,23 @@ module.exports = {
     //* Pull the correct user from the database
     User.findOne({
       where: {
-        userId: req.query.id
+        id: req.query.id
       },
     }).then(user => {
+
+      //* List of JSON comment objects
+      var commentsToSend = [];
+      
+      //* JSON object with relevant data from userList (passed via query string), 
+      //* and a list of JSON comment objects in no particular order
+      var profile = {
+        name: user.name,
+        id: req.query.id,
+        btc: req.query.btc,
+        eth: req.query.eth,
+        ltc: req.query.ltc,
+        comments: commentsToSend
+      };
 
       //* Pull the relevant comments from the database if user is an expert
       if(user.expert) {
@@ -32,22 +46,8 @@ module.exports = {
               prediction: comment.prediction
             };
 
-            //* List of JSON comment objects
-            var commentsToSend = [];
-
             //* Push JSON comment object into comment list
             commentsToSend.push(comment);
-
-            //* JSON object with relevant data from userList (passed via query string), 
-            //* and a list of JSON comment objects in no particular order
-            var profile = {
-              name: user.name,
-              id: req.query.id,
-              btc: req.query.btc,
-              eth: req.query.eth,
-              ltc: req.query.ltc,
-              comments: commentsToSend
-            };
           })
 
           //* Return the profile
