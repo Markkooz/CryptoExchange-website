@@ -35,37 +35,21 @@
     </div>
     {{!-- /Profile --}}
     {{!-- Comments --}}
+    {{#comments}}
     <div class="flex-column d-flex align-items-center">
       {{!-- C1 --}}
       <div class="d-flex flex-row">
         <div class="card mx-25">
           <div class="card-body">
-            <h5 class="card-title">Comment 1</h5>
-            <p class="card-text">Cupidatat commodo ut sint dolor dolore ut laboris rehenderit proident in exercitation eiusmod dolor cup</p>
+            <h5 class="card-title">Comment on the state of: {{crypto}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Prediction: {{prediction}}</h6>
+            <p class="card-text">{{text}}</p>
           </div>
         </div>
       </div>
       {{!-- /C1 --}}
-      {{!-- C2 --}}
-      <div class="d-flex flex-row">
-        <div class="card mx-25">
-          <div class="card-body">
-            <h5 class="card-title">Comment 2</h5>
-            <p class="card-text">Cupidatat commodo ut sint dolor dolore ut laboris rehenderit proident in exercitation eiusmod dolor cup</p>
-          </div>
-        </div>
-      </div>
-      {{!-- /C2 --}}
-      {{!-- C3 --}}
-      <div class="d-flex flex-row">
-        <div class="card mx-25">
-          <div class="card-body">
-            <h5 class="card-title">Comment 3</h5>
-            <p class="card-text">Cupidatat commodo ut sint dolor dolore ut laboris rehenderit proident in exercitation eiusmod dolor cup</p>
-          </div>
-        </div>
-      </div>
-      {{!-- /C3 --}}
     </div>
+    {{/comments}}
     {{!-- /Comments --}}
+    
 {{/profile}}
