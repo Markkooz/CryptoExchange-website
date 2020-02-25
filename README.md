@@ -1,6 +1,6 @@
 ## Crypto - Currency Exchange
 ### What is this?
-Crypto - Exchange is the final project for CSCI 3342 Internet Programming Fall 2019 at the University of Texas Rio Grande Valley. The project members are: <B>Ricardo Carrillo, Alvaro Rios, and Marc Barrera Fuente.</B> 
+Crypto - Exchange is the final project for CSCI 3342 Internet Programming Fall 2019 at the University of Texas Rio Grande Valley. The project members are: <B>Ricardo Carrillo, Alvaro Rios, and Marc Barrera Puente.</B> 
 
 Simply put, this is a web app that allows login/register of users with authentication and authorization if you are an "expert" user with the main functionality being the mock buying and selling of the 3 leading cryptocurrencies, namely, Bitcoin, Ethereum, and Litecoin. 
 
